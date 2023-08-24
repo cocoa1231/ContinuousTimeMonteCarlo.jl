@@ -1,0 +1,3 @@
+[deps]
+ContinuousTimeMonteCarlo = "de843ff1-020d-48a2-86c7-a8d73199bccf"
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"

@@ -1,0 +1,13 @@
+name = "ContinuousTimeMonteCarlo"
+uuid = "de843ff1-020d-48a2-86c7-a8d73199bccf"
+authors = ["Cocoa K."]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.9"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
