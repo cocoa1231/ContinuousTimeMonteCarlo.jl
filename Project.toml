@@ -3,6 +3,12 @@ uuid = "de843ff1-020d-48a2-86c7-a8d73199bccf"
 authors = ["Cocoa K."]
 version = "1.0.0-DEV"
 
+[deps]
+LazyArrays = "5078a376-72f3-5289-bfd5-ec5146d43c02"
+Memoize = "c03570c3-d221-55d1-a50c-7939bbd78826"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+
 [compat]
 julia = "1.9"
 
