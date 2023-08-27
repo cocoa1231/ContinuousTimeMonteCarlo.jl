@@ -6,8 +6,7 @@ using Memoize
 using LazyArrays
 import Base: show, empty!
 
-# using Base.Threads: nthreads, @threads, @spawn, threadid
-# using Base.Iterators: partition
+export AdjacencyData, update!, SWstep, GenericIsingLattice
 
 abstract type ContinuousLattice end
 
