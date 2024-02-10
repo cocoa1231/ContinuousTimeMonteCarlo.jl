@@ -4,9 +4,10 @@ using StatsBase
 using SparseArrays
 using Memoize
 using LazyArrays
+using LRUCache
 import Base: show, empty!
 
-export AdjacencyData, update!, SWstep, GenericIsingLattice
+export AdjacencyData, update!, SWstep!, GenericIsingLattice
 
 abstract type ContinuousLattice end
 
@@ -146,7 +147,7 @@ mutable struct GenericIsingLattice{trangeType, weightType} <: ContinuousLattice
     function GenericIsingLattice(N, beta, magnetic_field, adjmat; prec = 1e-3)
         @assert size(adjmat) ==  (N, N) "Adjacency Matrix of incorrect size!"
         states = spzeros(Int8, ceil(Int, beta / prec), N)
-        @memoize P_timeadd(t) = exp(-magnetic_field * t)
+        @memoize LRU{Tuple{Float64}, Float64}(maxsize=32) P_timeadd(t) = exp(-magnetic_field * t)
         t = 0:prec:beta
         w = Weights(BroadcastVector(P_timeadd, t))
         
